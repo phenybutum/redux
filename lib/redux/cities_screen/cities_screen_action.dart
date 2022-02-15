@@ -7,3 +7,9 @@ class CitiesScreenCitiesLoadedAction {
 
   CitiesScreenCitiesLoadedAction(this.cities);
 }
+
+class CitiesScreenNavigateToNextScreenAction {
+  final City pickedCity;
+
+  CitiesScreenNavigateToNextScreenAction(this.pickedCity);
+}

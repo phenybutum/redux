@@ -7,11 +7,15 @@ class CitiesScreenState extends Equatable {
   const CitiesScreenState({required this.cities});
 
   factory CitiesScreenState.initial() {
-    return const CitiesScreenState(cities: []);
+    return const CitiesScreenState(
+      cities: [],
+    );
   }
 
-  CitiesScreenState copyWith({List<City>? cities}) {
-    return CitiesScreenState(cities: cities ?? this.cities);
+  CitiesScreenState copyWith({List<City>? cities, City? pickedCity}) {
+    return CitiesScreenState(
+      cities: cities ?? this.cities,
+    );
   }
 
   @override

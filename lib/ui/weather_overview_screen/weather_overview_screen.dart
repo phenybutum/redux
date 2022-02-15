@@ -29,19 +29,19 @@ class WeatherOverviewScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '${viewModel.city.currentWeather?.temp.toString() ?? '--'}° C',
+                  '${viewModel.currentWeather?.temp.toString() ?? '--'}° C',
                   style: const TextStyle(fontSize: 35.0, color: Colors.white),
                 ),
-                Text(viewModel.city.currentWeather?.description ?? '--',
+                Text(viewModel.currentWeather?.description ?? '--',
                     style:
                         const TextStyle(fontSize: 28.0, color: Colors.white)),
                 const SizedBox(height: 10.0),
                 Text(
-                    'wind speed: ${viewModel.city.currentWeather?.windSpeed.toString() ?? '--'} m/s',
+                    'wind speed: ${viewModel.currentWeather?.windSpeed.toString() ?? '--'} m/s',
                     style:
                         const TextStyle(fontSize: 20.0, color: Colors.white)),
                 Text(
-                    'feels like: ${viewModel.city.currentWeather?.feelsLikeTemp.toString() ?? '--'}° C',
+                    'feels like: ${viewModel.currentWeather?.feelsLikeTemp.toString() ?? '--'}° C',
                     style:
                         const TextStyle(fontSize: 20.0, color: Colors.white)),
               ],

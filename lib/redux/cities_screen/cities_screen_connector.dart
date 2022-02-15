@@ -13,11 +13,17 @@ class CitiesScreenConnector extends StatelessWidget {
   Widget build(BuildContext context) {
     return StoreConnector<AppState, CitiesScreenViewModel>(
       distinct: true,
+      onInit: (store) {
+        store.dispatch(
+          CitiesScreenGetCitiesAction(),
+        );
+      },
       converter: (store) {
         return CitiesScreenViewModel(
           cities: store.state.citiesScreenState.cities,
-          getCities: () => store.dispatch(CitiesScreenGetCitiesAction()),
-          onPickCity: (city) => store.dispatch(WeatherOverviewScreenGetWeatherAction(city))
+          onCitySelect: (city) => store.dispatch(
+            CitiesScreenNavigateToNextScreenAction(city),
+          ),
         );
       },
       builder: (_, viewModel) {

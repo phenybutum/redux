@@ -26,12 +26,8 @@ class WeatherOverviewScreenMiddleware extends MiddlewareClass<AppState> {
 
   void _getWeather(Store<AppState> store, WeatherOverviewScreenGetWeatherAction action) async {
     final weather = await weatherDataService.getWeatherForCity(client, action.city);
-    final city = City(
-        name: action.city.name,
-        lat: action.city.lat,
-        lon: action.city.lon,
-        currentWeather: weather);
-    store.dispatch(WeatherOverviewScreenWeatherLoadedAction(city));
+
+    store.dispatch(WeatherOverviewScreenWeatherLoadedAction(weather));
   }
 
 }

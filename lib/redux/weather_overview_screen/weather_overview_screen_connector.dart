@@ -12,7 +12,9 @@ class WeatherOverviewScreenConnector extends StatelessWidget {
     return StoreConnector<AppState, WeatherOverviewScreenViewModel>(
       converter: (store) {
         return WeatherOverviewScreenViewModel(
-            store.state.weatherOverviewScreenState.city);
+          store.state.weatherOverviewScreenState.city,
+          store.state.weatherOverviewScreenState.weather,
+        );
       },
       builder: (_, viewModel) {
         return WeatherOverviewScreen(viewModel: viewModel);

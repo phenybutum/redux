@@ -9,11 +9,21 @@ final weatherOverviewScreenReducer =
         WeatherOverviewScreenWeatherLoadedAction>(
       _weatherOverviewScreenWeatherLoadedAction,
     ),
+    TypedReducer<WeatherOverviewScreenState,
+        WeatherOverviewScreenGetCityInfoAction>(
+      _weatherOverviewScreenGetCityInfoAction,
+    ),
   ],
 );
 
 WeatherOverviewScreenState _weatherOverviewScreenWeatherLoadedAction(
     WeatherOverviewScreenState state,
     WeatherOverviewScreenWeatherLoadedAction action) {
+  return state.copyWith(weather: action.weather);
+}
+
+WeatherOverviewScreenState _weatherOverviewScreenGetCityInfoAction(
+    WeatherOverviewScreenState state,
+    WeatherOverviewScreenGetCityInfoAction action) {
   return state.copyWith(city: action.city);
 }

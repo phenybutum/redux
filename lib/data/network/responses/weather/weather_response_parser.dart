@@ -10,7 +10,7 @@ class WeatherResponseParser {
     var weather = Weather(
       description: weatherResponse.description,
       temp: weatherResponse.temperature.toInt(),
-      windSpeed: weatherResponse.windSpeed,
+      windSpeed: weatherResponse.windSpeed.toInt(),
       feelsLikeTemp: weatherResponse.feelsLike.toInt(),
     );
     return weather;

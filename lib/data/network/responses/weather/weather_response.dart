@@ -2,15 +2,16 @@ import 'package:equatable/equatable.dart';
 
 class WeatherResponse extends Equatable {
   final String description;
-  final double temperature;
-  final int windSpeed;
-  final double feelsLike;
+  final dynamic temperature;
+  final dynamic windSpeed;
+  final dynamic feelsLike;
 
-  const WeatherResponse(
-      {required this.description,
-      required this.temperature,
-      required this.windSpeed,
-      required this.feelsLike});
+  const WeatherResponse({
+    required this.description,
+    required this.temperature,
+    required this.windSpeed,
+    required this.feelsLike,
+  });
 
   factory WeatherResponse.fromJSON(json) {
     final weather = WeatherResponse(

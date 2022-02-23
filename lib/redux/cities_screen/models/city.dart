@@ -1,10 +1,16 @@
-import 'package:redux_test_proj/redux/weather_overview_screen/models/weather.dart';
+import 'package:equatable/equatable.dart';
 
-class City {
-  final String name;
-  final double lat;
-  final double lon;
-  final Weather? currentWeather;
+class City extends Equatable {
+  final String? name;
+  final double? lat;
+  final double? lon;
 
-  City({required this.name, required this.lat, required this.lon, this.currentWeather});
+  const City({
+    this.name,
+    this.lat,
+    this.lon,
+  });
+
+  @override
+  List<Object?> get props => [name, lat, lon];
 }

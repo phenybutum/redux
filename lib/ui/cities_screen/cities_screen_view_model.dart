@@ -1,17 +1,14 @@
 import 'package:equatable/equatable.dart';
-import 'package:redux_test_proj/redux/cities_screen/models/city.dart';
+
+import 'package:redux_test_proj/ui/cities_screen/shared_widgets/city/city_widget_view_model.dart';
 
 class CitiesScreenViewModel extends Equatable {
-  final List<City> cities;
-  final void Function() getCities;
-  final void Function(City city) onPickCity;
+  final List<CityWidgetViewModel> cities;
 
   const CitiesScreenViewModel({
     required this.cities,
-    required this.getCities,
-    required this.onPickCity,
   });
 
   @override
-  List<Object?> get props => [cities, getCities, onPickCity];
+  List<Object?> get props => [cities];
 }

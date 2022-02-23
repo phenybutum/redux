@@ -6,6 +6,7 @@ import 'package:redux_test_proj/redux/cities_screen/cities_screen_action.dart';
 
 import 'package:redux_test_proj/ui/cities_screen/cities_screen.dart';
 import 'package:redux_test_proj/ui/cities_screen/cities_screen_view_model.dart';
+import 'package:redux_test_proj/ui/cities_screen/shared_widgets/city/city_widget_view_model.dart';
 
 class CitiesScreenConnector extends StatelessWidget {
   const CitiesScreenConnector({Key? key}) : super(key: key);
@@ -21,10 +22,18 @@ class CitiesScreenConnector extends StatelessWidget {
       },
       converter: (store) {
         return CitiesScreenViewModel(
-          cities: store.state.citiesScreenState.cities,
-          onPickCity: (city) => store.dispatch(
-            CitiesScreenCitySelectedAction(city),
-          ),
+          cities: store.state.citiesScreenState.cities
+              .map(
+                (e) => CityWidgetViewModel(
+                  city: e,
+                  onCitySelect: () {
+                    store.dispatch(
+                      CitiesScreenCitySelectedAction(e),
+                    );
+                  },
+                ),
+              )
+              .toList(),
         );
       },
       builder: (_, viewModel) {

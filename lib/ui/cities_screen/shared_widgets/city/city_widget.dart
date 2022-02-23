@@ -15,9 +15,7 @@ class CityWidget extends StatelessWidget {
     return Column(
       children: [
         InkWell(
-          onTap: () {
-            viewModel.onCitySelect(viewModel.city);
-          },
+          onTap: viewModel.onCitySelect,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(

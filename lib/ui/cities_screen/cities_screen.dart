@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:redux_test_proj/ui/cities_screen/cities_screen_view_model.dart';
 import 'package:redux_test_proj/ui/cities_screen/shared_widgets/city/city_widget.dart';
-import 'package:redux_test_proj/ui/cities_screen/shared_widgets/city/city_widget_view_model.dart';
 
 class CitiesScreen extends StatelessWidget {
   final CitiesScreenViewModel viewModel;
@@ -16,7 +15,7 @@ class CitiesScreen extends StatelessWidget {
     List<Widget> citiesList = viewModel.cities.map(
       (city) {
         return CityWidget(
-          viewModel: CityWidgetViewModel(city: city, onCitySelect: viewModel.onPickCity),
+          viewModel: city,
         );
       },
     ).toList();

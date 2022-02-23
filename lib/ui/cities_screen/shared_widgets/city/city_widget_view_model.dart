@@ -4,7 +4,7 @@ import 'package:redux_test_proj/redux/cities_screen/models/city.dart';
 
 class CityWidgetViewModel extends Equatable {
   final City city;
-  final Function(City city) onCitySelect;
+  final Function() onCitySelect;
 
   const CityWidgetViewModel({
     required this.city,

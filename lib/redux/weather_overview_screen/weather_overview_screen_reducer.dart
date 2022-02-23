@@ -7,12 +7,12 @@ final weatherOverviewScreenReducer =
     combineReducers<WeatherOverviewScreenState>(
   [
     TypedReducer<WeatherOverviewScreenState,
-        WeatherOverviewScreenWeatherLoadedAction>(
-      _weatherOverviewScreenWeatherLoadedAction,
-    ),
-    TypedReducer<WeatherOverviewScreenState,
         CitiesScreenCitySelectedAction>(
       _citiesScreenCitySelectedAction,
+    ),
+    TypedReducer<WeatherOverviewScreenState,
+        WeatherOverviewScreenWeatherLoadedAction>(
+      _weatherOverviewScreenWeatherLoadedAction,
     ),
   ],
 );

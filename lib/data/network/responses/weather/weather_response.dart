@@ -6,11 +6,12 @@ class WeatherResponse extends Equatable {
   final dynamic windSpeed;
   final dynamic feelsLike;
 
-  const WeatherResponse(
-      {required this.description,
-      required this.temperature,
-      required this.windSpeed,
-      required this.feelsLike});
+  const WeatherResponse({
+    required this.description,
+    required this.temperature,
+    required this.windSpeed,
+    required this.feelsLike,
+  });
 
   factory WeatherResponse.fromJSON(json) {
     final weather = WeatherResponse(

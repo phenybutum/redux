@@ -4,7 +4,7 @@ import 'package:redux_test_proj/data/network/weather_services/weather_data_servi
 import 'package:redux_test_proj/redux/app/app_reducer.dart';
 import 'package:redux_test_proj/redux/app/app_state.dart';
 import 'package:redux_test_proj/redux/cities_screen/cities_screen_middleware.dart';
-import 'package:redux_test_proj/redux/cities_screen/cities_screen_navigation_middleware.dart';
+import 'package:redux_test_proj/redux/navigation/navigation_middleware.dart';
 import 'package:redux_test_proj/redux/weather_overview_screen/weather_overview_screen_middleware.dart';
 
 import 'package:http/http.dart' as http;
@@ -17,7 +17,7 @@ Store<AppState> createStore() {
       CitiesScreenMiddleware(
         mockDataService: CitiesMockDataService(),
       ),
-      CitiesScreenNavigationMiddleware(),
+      NavigationMiddleware(),
       WeatherOverviewScreenMiddleware(
         weatherDataService: WeatherDataService(),
         client: http.Client(),

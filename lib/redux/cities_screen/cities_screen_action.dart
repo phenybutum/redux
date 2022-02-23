@@ -1,6 +1,6 @@
 import 'package:redux_test_proj/redux/cities_screen/models/city.dart';
 
-class CitiesScreenGetCitiesAction {}
+class CitiesScreenInitAction {}
 
 class CitiesScreenCitiesLoadedAction {
   final List<City> cities;
@@ -8,8 +8,8 @@ class CitiesScreenCitiesLoadedAction {
   CitiesScreenCitiesLoadedAction(this.cities);
 }
 
-class CitiesScreenNavigateToNextScreenAction {
+class CitiesScreenCitySelectedAction {
   final City pickedCity;
 
-  CitiesScreenNavigateToNextScreenAction(this.pickedCity);
+  CitiesScreenCitySelectedAction(this.pickedCity);
 }

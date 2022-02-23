@@ -1,5 +1,6 @@
-import 'package:redux_test_proj/data/network/responses/weather/weather_response.dart';
 import 'package:redux_test_proj/redux/weather_overview_screen/models/weather.dart';
+
+import 'package:redux_test_proj/data/network/responses/weather/weather_response.dart';
 
 class WeatherResponseParser {
   final WeatherResponse weatherResponse;

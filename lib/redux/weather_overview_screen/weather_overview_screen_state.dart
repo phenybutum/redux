@@ -6,13 +6,15 @@ class WeatherOverviewScreenState extends Equatable {
   final City city;
   final Weather weather;
 
-  const WeatherOverviewScreenState({required this.city, required this.weather});
+  const WeatherOverviewScreenState({
+    required this.city,
+    required this.weather,
+  });
 
   factory WeatherOverviewScreenState.initial() {
     return const WeatherOverviewScreenState(
-      city: City(name: '', lat: 0, lon: 0),
-      weather:
-          Weather(feelsLikeTemp: 0, temp: 0, windSpeed: 0, description: ''),
+      city: City(),
+      weather: Weather(),
     );
   }
 

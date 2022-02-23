@@ -1,10 +1,13 @@
 import 'package:equatable/equatable.dart';
+
 import 'package:redux_test_proj/redux/cities_screen/models/city.dart';
 
 class CitiesScreenState extends Equatable {
   final List<City> cities;
 
-  const CitiesScreenState({required this.cities});
+  const CitiesScreenState({
+    required this.cities,
+  });
 
   factory CitiesScreenState.initial() {
     return const CitiesScreenState(
@@ -12,7 +15,7 @@ class CitiesScreenState extends Equatable {
     );
   }
 
-  CitiesScreenState copyWith({List<City>? cities, City? pickedCity}) {
+  CitiesScreenState copyWith({List<City>? cities}) {
     return CitiesScreenState(
       cities: cities ?? this.cities,
     );

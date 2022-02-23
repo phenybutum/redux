@@ -1,7 +1,9 @@
 import 'dart:convert';
+
+import 'package:redux_test_proj/data/network/weather_services/weather_service.dart';
 import 'package:redux_test_proj/data/network/responses/weather/weather_response.dart';
 import 'package:redux_test_proj/data/network/responses/weather/weather_response_parser.dart';
-import 'package:redux_test_proj/data/network/weather_services/weather_service.dart';
+
 import 'package:redux_test_proj/redux/cities_screen/models/city.dart';
 import 'package:redux_test_proj/redux/weather_overview_screen/models/weather.dart';
 

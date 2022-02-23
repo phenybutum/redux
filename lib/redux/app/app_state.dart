@@ -6,12 +6,12 @@ import 'package:redux_test_proj/redux/weather_overview_screen/weather_overview_s
 @immutable
 class AppState extends Equatable {
   final CitiesScreenState citiesScreenState;
-  final WeatherOverviewScreenState
-      weatherOverviewScreenState;
+  final WeatherOverviewScreenState weatherOverviewScreenState;
 
-  const AppState(
-      {required this.citiesScreenState,
-      required this.weatherOverviewScreenState});
+  const AppState({
+    required this.citiesScreenState,
+    required this.weatherOverviewScreenState,
+  });
 
   factory AppState.initial() {
     return AppState(
@@ -31,8 +31,5 @@ class AppState extends Equatable {
   }
 
   @override
-  List<Object> get props => [
-        citiesScreenState,
-        weatherOverviewScreenState,
-      ];
+  List<Object> get props => [citiesScreenState, weatherOverviewScreenState];
 }

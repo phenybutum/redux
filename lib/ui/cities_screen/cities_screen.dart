@@ -13,17 +13,13 @@ class CitiesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> citiesList = [];
-    for (var element in viewModel.cities) {
-      citiesList.add(
-        CityWidget(
-          viewModel: CityWidgetViewModel(
-            city: element,
-            onCitySelect: (city) => viewModel.onCitySelect(city),
-          ),
-        ),
-      );
-    }
+    List<Widget> citiesList = viewModel.cities.map(
+      (city) {
+        return CityWidget(
+          viewModel: CityWidgetViewModel(city: city, onCitySelect: viewModel.onPickCity),
+        );
+      },
+    ).toList();
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
